@@ -17,7 +17,7 @@ public struct HomeUseCase {
 
 extension HomeUseCase: HomeUseCaseType {
     public func fetchHomeData() async throws -> HomeEntity {
-        let response = try await client.fetchHomeData()
+        let response = try await client.fetchHomeData(from: 1)
         return response.mapToEntity()
     }
 }

@@ -8,7 +8,7 @@
 import Foundation
 
 public protocol HomeClientType {
-    func fetchHomeData() async throws -> HomeResponse
+    func fetchHomeData(from page: Int) async throws -> HomeResponse
 }
 
 public struct HomeClient: HomeClientType {
@@ -19,8 +19,9 @@ public struct HomeClient: HomeClientType {
         self.networkClient = networkClient
     }
     
-    public func fetchHomeData() async throws -> HomeResponse {
-        let request = Request.build(with: "home_sections")
+    public func fetchHomeData(from page: Int) async throws -> HomeResponse {
+        let request = Request.build(with: "home_sections",
+                                    urlParameters: ["page": "\(page)"])
         return try await networkClient.sendRequest(request: request)
     }
 }
