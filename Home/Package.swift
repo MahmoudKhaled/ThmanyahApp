@@ -4,30 +4,29 @@
 import PackageDescription
 
 let package = Package(
-    name: "Central",
+    name: "Home",
     platforms: [
         .iOS(.v15)
     ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "Central",
-            targets: ["Central"]),
+            name: "Home",
+            targets: ["Home"]),
     ],
     dependencies: [
-        .package(name: "Domain", path: "../Domain"),
-        .package(name: "Network", path: "../Network")
+        .package(name: "Domain", path: "../Domain")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "Central",
-            dependencies: ["Domain", "Network"]
+            name: "Home",
+            dependencies: ["Domain"]
         ),
         .testTarget(
-            name: "CentralTests",
-            dependencies: ["Central"]
+            name: "HomeTests",
+            dependencies: ["Home"]
         ),
     ]
 )
