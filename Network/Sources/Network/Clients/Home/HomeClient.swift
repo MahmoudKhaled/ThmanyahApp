@@ -11,7 +11,7 @@ public protocol HomeClientType {
     func fetchHomeData() async throws -> HomeResponse
 }
 
-struct HomeClient: HomeClientType {
+public struct HomeClient: HomeClientType {
     
     let networkClient: NetworkClientType
     
@@ -19,7 +19,7 @@ struct HomeClient: HomeClientType {
         self.networkClient = networkClient
     }
     
-    func fetchHomeData() async throws -> HomeResponse {
+    public func fetchHomeData() async throws -> HomeResponse {
         let request = Request.build(with: "home_sections")
         return try await networkClient.sendRequest(request: request)
     }

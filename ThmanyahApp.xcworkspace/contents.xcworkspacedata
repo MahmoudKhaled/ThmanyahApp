@@ -5,6 +5,9 @@
       location = "group:Domain">
    </FileRef>
    <FileRef
+      location = "group:Central">
+   </FileRef>
+   <FileRef
       location = "group:Network">
    </FileRef>
    <FileRef
