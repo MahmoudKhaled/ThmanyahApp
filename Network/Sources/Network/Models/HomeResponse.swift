@@ -30,11 +30,13 @@ public struct PaginationResponse: Decodable {
 
 public struct SectionResponse: Decodable {
     let name, type, contentType: String?
+    let order: Int
     let content: [Content]?
 
     enum CodingKeys: String, CodingKey {
         case name, type
         case contentType = "content_type"
+        case order
         case content
     }
 }
