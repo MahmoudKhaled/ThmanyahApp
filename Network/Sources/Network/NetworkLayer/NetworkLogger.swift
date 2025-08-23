@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class NetworkLogger {
+class NetworkLogger {
 
     private static var isLoggingEnabled: Bool {
         #if DEBUG
@@ -44,7 +44,7 @@ public class NetworkLogger {
         print(logOutput)
     }
     
-    public static func log(error: Error?) {
+    static func log(error: Error?) {
         if NetworkLogger.isLoggingEnabled,
            error != nil {
             print("\n-----------------Error Response start------------------\n")
@@ -52,7 +52,7 @@ public class NetworkLogger {
         }
     }
     
-    public static func log(request: URLRequest, response: URLResponse?, data: Data?) {
+    static func log(request: URLRequest, response: URLResponse?, data: Data?) {
         if NetworkLogger.isLoggingEnabled {
             log(request: request)
             if response != nil {

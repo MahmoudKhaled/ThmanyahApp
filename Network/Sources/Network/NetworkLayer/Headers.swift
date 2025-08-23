@@ -7,8 +7,8 @@
 
 import Foundation
 
-public enum Headers {
-
+enum Headers {
+    
     static var defaultHeaders: [String: String] {
         let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
         return [

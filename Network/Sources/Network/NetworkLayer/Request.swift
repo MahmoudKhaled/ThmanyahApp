@@ -1,5 +1,5 @@
 //
-//  ThamnyahRequest.swift
+//  Request.swift
 //  Network
 //
 //  Created by Mahmoud Khaled on 23/08/2025.

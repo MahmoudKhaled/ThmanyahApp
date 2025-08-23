@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 struct NetworkResponseHandler {
     
     func checkResponseError(response: URLResponse) throws {
