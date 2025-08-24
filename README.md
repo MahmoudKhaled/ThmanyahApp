@@ -8,7 +8,7 @@ This project is built using **Swift** and follows the **MVVM (Model-View-ViewMod
 * iOS 18.0+
 
 ## Setup Configs
-- Checkout master branch to run latest version
+- Checkout main branch to run latest version
 - Open the terminal.
 - Navigate to the project root directory.
 - Open the project by double clicking the `ThmanyahApp.xcworkspace` file
@@ -86,8 +86,3 @@ ThmanyahApp (Target App)
 * **Vertical modularity** ensures separation of concerns.
 * **Domain-centric design** → Presentation depends on Domain, not on raw Network responses.
 * **Scalability** → Each feature can be developed, tested, and extended independently.
-
----
-
-
-
