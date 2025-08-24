@@ -10,15 +10,15 @@ import Foundation
 // MARK: - HomeDTO
 
 public struct HomeResponse: Decodable {
-    let sections: [SectionResponse]?
-    let pagination: PaginationResponse?
+    public let sections: [SectionResponse]?
+    public let pagination: PaginationResponse?
 }
 
 // MARK: - Pagination
 
 public struct PaginationResponse: Decodable {
-    let nextPage: String?
-    let totalPages: Int?
+    public let nextPage: String?
+    public let totalPages: Int?
 
     enum CodingKeys: String, CodingKey {
         case nextPage = "next_page"
@@ -29,9 +29,9 @@ public struct PaginationResponse: Decodable {
 // MARK: - Section
 
 public struct SectionResponse: Decodable {
-    let name, type, contentType: String?
-    let order: Int
-    let content: [Content]?
+    public let name, type, contentType: String?
+    public let order: Int
+    public let content: [SectionItemResponse]?
 
     enum CodingKeys: String, CodingKey {
         case name, type
@@ -43,30 +43,30 @@ public struct SectionResponse: Decodable {
 
 // MARK: - Content
 
-public struct Content: Decodable {
-    let podcastID, name, description: String?
-    let avatarURL: String?
-    let episodeCount, duration: Int?
-    let language: String?
-    let priority, popularityScore: Int?
-    let score: Double?
-    let podcastPopularityScore, podcastPriority: Int?
-    let episodeID: String?
-    let seasonNumber: String?
-    let episodeType: String?
-    let podcastName: String?
-    let authorName: String?
-    let number: String?
-    let separatedAudioURL, audioURL: String?
-    let releaseDate: String?
-    let chapters: [String]?
-    let paidIsEarlyAccess, paidIsNowEarlyAccess, paidIsExclusive: Bool?
-    let paidTranscriptURL, freeTranscriptURL: String?
-    let paidIsExclusivePartially: Bool?
-    let paidExclusiveStartTime: Int?
-    let paidEarlyAccessDate, paidEarlyAccessAudioURL, paidExclusivityType: String?
-    let audiobookID: String?
-    let articleID: String?
+public struct SectionItemResponse: Decodable {
+    public let podcastID, name, description: String?
+    public let avatarURL: String?
+    public let episodeCount, duration: Int?
+    public let language: String?
+    public let priority, popularityScore: Int?
+    public let score: Double?
+    public let podcastPopularityScore, podcastPriority: Int?
+    public let episodeID: String?
+    public let seasonNumber: String?
+    public let episodeType: String?
+    public let podcastName: String?
+    public let authorName: String?
+    public let number: String?
+    public let separatedAudioURL, audioURL: String?
+    public let releaseDate: String?
+    public let chapters: [String]?
+    public let paidIsEarlyAccess, paidIsNowEarlyAccess, paidIsExclusive: Bool?
+    public let paidTranscriptURL, freeTranscriptURL: String?
+    public let paidIsExclusivePartially: Bool?
+    public let paidExclusiveStartTime: Int?
+    public let paidEarlyAccessDate, paidEarlyAccessAudioURL, paidExclusivityType: String?
+    public let audiobookID: String?
+    public let articleID: String?
 
     enum CodingKeys: String, CodingKey {
         case podcastID = "podcast_id"

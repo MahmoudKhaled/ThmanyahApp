@@ -8,5 +8,5 @@
 import Foundation
 
 public protocol HomeUseCaseType {
-    func fetchHomeData() async throws -> HomeEntity
+    func fetchHomeData(with page: Int) async throws -> HomeEntity
 }

@@ -13,9 +13,9 @@ public protocol HomeClientType {
 
 public struct HomeClient: HomeClientType {
     
-    let networkClient: NetworkClientType
+    private let networkClient: NetworkClientType
     
-    init(networkClient: NetworkClientType) {
+    public init(networkClient: NetworkClientType) {
         self.networkClient = networkClient
     }
     

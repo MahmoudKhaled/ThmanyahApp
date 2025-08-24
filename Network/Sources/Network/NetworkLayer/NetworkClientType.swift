@@ -13,7 +13,7 @@ public protocol NetworkClientType {
 
 public class NetworkClient {
     
-    let session: URLSession
+    private let session: URLSession
     
     public init(session: URLSession = URLSession(configuration: .default)) {
         self.session = session

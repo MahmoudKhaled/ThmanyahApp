@@ -6,12 +6,23 @@
 //
 
 import SwiftUI
+import Home
+import Central
 
 @main
 struct ThmanyahAppApp: App {
+    
+    let useCase = HomeUseCase()
+    var homeViewModel = HomeViewModel()
+    
+    init() {
+        homeViewModel.useCase = useCase
+    }
+        
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView(homeViewModel: homeViewModel)
+                .preferredColorScheme(.dark)
         }
     }
 }

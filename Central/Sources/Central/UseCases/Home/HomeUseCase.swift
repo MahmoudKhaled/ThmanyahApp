@@ -10,14 +10,16 @@ import Domain
 
 public struct HomeUseCase {
     private let client: HomeClientType
-    init(client: HomeClientType) {
-        self.client = client
+    private let networkClient = NetworkClient()
+    
+    public init() {
+        client = HomeClient(networkClient: networkClient)
     }
 }
 
 extension HomeUseCase: HomeUseCaseType {
-    public func fetchHomeData() async throws -> HomeEntity {
-        let response = try await client.fetchHomeData(from: 1)
+    public func fetchHomeData(with page: Int) async throws -> HomeEntity {
+        let response = try await client.fetchHomeData(from: page)
         return response.mapToEntity()
     }
 }
