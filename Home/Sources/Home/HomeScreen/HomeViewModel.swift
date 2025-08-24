@@ -19,9 +19,7 @@ public class HomeViewModel: ObservableObject {
     private var currentPage: Int = 0
     
     public init() { }
-//    public init(useCase: HomeUseCaseType) {
-//        self.useCase = useCase
-//    }
+
 }
 
 extension HomeViewModel {
