@@ -21,7 +21,7 @@ struct GridRowView: View {
         ScrollView(.horizontal, showsIndicators: false) {
             LazyHGrid(rows: rows, spacing: 15) {
                 ForEach(items) { item in
-                    TwoLineGridEpisodeItemView(item: item)
+                    TwoLineGridItemView(item: item)
                 }
             }
             .frame(maxHeight: .infinity)
@@ -31,22 +31,22 @@ struct GridRowView: View {
 
 // MARK: - Card
 
-private struct TwoLineGridEpisodeItemView: View {
+private struct TwoLineGridItemView: View {
     let item: SectionItemEntity
 
     var body: some View {
         HStack(spacing: 15) {
             AsyncImageView(url: item.imageURL, size: .init(width: 100, height: 100))
                 .clipShape(RoundedRectangle(cornerRadius: 8))
-            TwoLineGridEpisodeItemInfo(item: item)
+            TwoLineGridItemInfoView(item: item)
         }
         .onTapGesture {
-            
+            // Add action here
         }
     }
 }
 
-private struct TwoLineGridEpisodeItemInfo: View {
+private struct TwoLineGridItemInfoView: View {
     var item: SectionItemEntity
 
     var body: some View {

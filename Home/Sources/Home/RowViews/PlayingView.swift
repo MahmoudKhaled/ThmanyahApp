@@ -23,7 +23,7 @@ struct PlayingView: View {
         }
         .padding(.horizontal, 8)
         .padding(.vertical, 4)
-        .background(.gray) // #4a5568
+        .background(.gray)
         .clipShape(Capsule())
         .shadow(color: .black.opacity(0.3), radius: 4, x: 0, y: 2)
     }

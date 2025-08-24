@@ -16,15 +16,9 @@ struct SquareRowView: View {
             HStack(spacing: 16) {
                 ForEach(items) { item in
                     VStack(alignment: .leading) {
-                        AsyncImage(url: item.imageURL) { image in
-                            image.resizable()
-                                .scaledToFit()
-                                .frame(width: 150, height: 150)
-                                .cornerRadius(12)
-                        } placeholder: {
-                            ProgressView()
-                                .frame(width: 150, height: 150)
-                        }
+                        AsyncImageView(url: item.imageURL,
+                                       size: .init(width: 150, height: 150))
+                        .clipShape(RoundedRectangle(cornerRadius: 12))
                         Text(item.title)
                             .font(.headline)
                             .lineLimit(1)

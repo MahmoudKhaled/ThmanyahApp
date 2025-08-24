@@ -15,7 +15,7 @@ struct BigSquareRow: View {
         ScrollView(.horizontal, showsIndicators: false) {
             LazyHStack {
                 ForEach(items) { item in
-                    BigSquareAudioBookItemView(item: item,
+                    BigSquareItemView(item: item,
                                                size: .init(width: 300, height: 300)
                     )
                 }
@@ -26,7 +26,7 @@ struct BigSquareRow: View {
 
 // MARK: - Card
 
-private struct BigSquareAudioBookItemView: View {
+private struct BigSquareItemView: View {
     let item: SectionItemEntity
     let size: CGSize
 
@@ -67,7 +67,7 @@ private struct BigSquareAudioBookItemView: View {
         )
         .clipShape(RoundedRectangle(cornerRadius: Constants.cornerRadius))
         .onTapGesture {
-            
+            // Add action here
         }
     }
 }
