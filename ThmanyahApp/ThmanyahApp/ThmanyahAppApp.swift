@@ -14,6 +14,7 @@ struct ThmanyahAppApp: App {
     
     let useCase = HomeUseCase()
     var homeViewModel = HomeViewModel()
+    @StateObject var homeRouter = HomeRouter()
     
     init() {
         homeViewModel.useCase = useCase
@@ -21,8 +22,19 @@ struct ThmanyahAppApp: App {
         
     var body: some Scene {
         WindowGroup {
-            HomeView(homeViewModel: homeViewModel)
+            ZStack {
+                HomeView(
+                    homeViewModel: homeViewModel,
+                    router: homeRouter
+                )
                 .preferredColorScheme(.dark)
+            }
+            .sheet(item: $homeRouter.presentedScreen) { screen in
+                switch screen {
+                case .search(let vm):
+                    SearchScreen(searchViewModel: vm)
+                }
+            }
         }
     }
 }

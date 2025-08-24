@@ -9,14 +9,20 @@ import SwiftUI
 public struct HomeView: View {
     
     @ObservedObject var viewModel: HomeViewModel
+    @State private var isPresentingSearch = false
+    private let router: HomeRouterType
     
-    public init (homeViewModel: HomeViewModel) {
+    public init (homeViewModel: HomeViewModel,
+                 router: HomeRouterType) {
         self.viewModel = homeViewModel
+        self.router = router
     }
     
     public var body: some View {
         VStack {
-            HeaderView()
+            HeaderView {
+                router.navigateToSearch()
+            }
             List {
                 ForEach (viewModel.sectionItems, id: \.id) { section in
                     SectionView(section: section)
@@ -34,6 +40,9 @@ public struct HomeView: View {
         }
         .task {
             await viewModel.getHomeData()
+        }
+        .sheet(isPresented: $isPresentingSearch) {
+            
         }
     }
 }
