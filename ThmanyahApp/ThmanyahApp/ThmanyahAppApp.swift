@@ -8,15 +8,21 @@
 import SwiftUI
 import Home
 import Central
+import Network
+import Domain
 
 @main
 struct ThmanyahAppApp: App {
     
-    let useCase = HomeUseCase()
+    let networkClient =  NetworkClient()
+    let useCase: HomeUseCaseType
+    let client: HomeClientType
     var homeViewModel = HomeViewModel()
     @StateObject var homeRouter = HomeRouter()
     
     init() {
+        client = HomeClient(networkClient: networkClient)
+        useCase = HomeUseCase(client: client)
         homeViewModel.useCase = useCase
     }
         

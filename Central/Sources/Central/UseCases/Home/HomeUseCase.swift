@@ -12,8 +12,8 @@ public struct HomeUseCase {
     private let client: HomeClientType
     private let networkClient = NetworkClient()
     
-    public init() {
-        client = HomeClient(networkClient: networkClient)
+    public init(client: HomeClientType) {
+        self.client = client
     }
 }
 
